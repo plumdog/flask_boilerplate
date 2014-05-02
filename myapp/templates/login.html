@@ -1,10 +1,12 @@
 {% extends "template.html" %}
+{% from "form.html" import form_macro %}
 
 {% block title %}
-  Index
+  Login
 {% endblock %}
 
 
 {% block body %}
-  <p>Index</p>
+  <h1>Login</h1>
+  {{ form_macro(form) }}
 {% endblock %}
