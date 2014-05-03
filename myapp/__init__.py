@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, flash, url_for, abort
 from flask.ext.login import LoginManager, login_user, current_user, logout_user, login_required, login_url
-from .models import User
+from .models import db, User
 from .forms import LoginForm
 
 from flask_debugtoolbar import DebugToolbarExtension
@@ -13,6 +13,7 @@ def string_isinstance(obj, cls_name):
 def app_factory(**kwargs):
     app = Flask(__name__)
     app.config.from_object(config_combined)
+    db.init_app(app)
 
     DebugToolbarExtension(app)
 

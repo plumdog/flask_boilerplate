@@ -14,5 +14,6 @@ then
     FROM="myapp"
 fi
 
-sed -i -e "s/$FROM/$NAME/g" runserver.py
+sed -i -e "s/$FROM/$NAME/g" runserver.py mysql_init.sql config_defaults.py alembic/env.py
 mv "$FROM" "$NAME"
+
